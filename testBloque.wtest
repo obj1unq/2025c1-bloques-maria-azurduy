@@ -16,4 +16,43 @@ describe "pepita volar" {
     assert.that( miAsserter.assertException( { pepita.volar(1000) } ))
   }
 
+
+
 }
+
+describe "roque" {
+  test "rutina 1 de roque" {
+    roque.rutina( { ave=>
+      ave.comer(alpiste)
+      ave.volar(5)
+    })
+
+    roque.entrenar()
+    assert.equals(105, pepita.energia())
+  }
+
+  test "rutina 2 de roque" {
+    roque.rutina( { ave=>
+      ave.volar(5)
+      ave.comer(alpiste)
+      ave.volar(5)
+    })
+
+    roque.entrenar()
+    assert.equals(105, pepita.energia())
+  }
+
+  test "rutina 3 de roque" {
+    roque.rutina( { ave=>
+      ave.comer(alpiste)
+      ave.volar(1000)
+      ave.comer(alpiste)
+    })
+
+    assert.throwsException({ roque.entrenar() })
+    assert.equals(120, pepita.energia())
+  }
+}
+
+
+
