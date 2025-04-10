@@ -24,6 +24,36 @@ object pepita {
 
 }
 
+object roque {
+
+  var rutina = {}
+  var ave = pepita
+  var cantidadDeCenas = 0
+
+  method rutina(_rutina) {
+    rutina= _rutina
+  }
+
+  method ave(_ave){
+    ave = _ave
+  }
+
+  method entrenar() {
+    rutina.apply(ave)
+  }
+
+  method alimentarAveCon(alimento){
+    ave.comer(alimento)
+    cantidadDeCenas = cantidadDeCenas + 1
+  }
+
+method cenas() {
+    return cantidadDeCenas
+  }
+}
+
+
+
 object alpiste {
   method energiaQueAporta() = 20
 }
